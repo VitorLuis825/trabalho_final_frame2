@@ -12,8 +12,10 @@ function Profile({user={}}){
 
 export async function getStaticProps(context){
     const response = await axios.get(
-        'https://jsonplaceholder.typicode.com/users'
-    )
+        'https://jsonplaceholder.typicode.com/users',
+        {params: {id:context.params.id}}
+    );
+
     const user = await response.data[0];
     return {
         props: {user}
@@ -21,11 +23,17 @@ export async function getStaticProps(context){
 }
 
 export async function getStaticPaths(){
+    const response = await axios.get(
+        'https://jsonplaceholder.typicode.com/users'
+    );
+
+    const users = await response.data;
+    const paths = users.map((user) => {
+        return {params: {id: String(user.id)}};
+    });
+
     return {
-        paths: [
-            {params: {id: '1'}},
-            {params: {id: '2'}},
-        ],
+        paths,
         fallback:true,
     };
 }

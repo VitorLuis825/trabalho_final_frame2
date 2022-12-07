@@ -1,23 +1,25 @@
 import React from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
-function Users ({users}){
+function Users({users}){
     return (
         <div>
-            <h1>Lista de Usuários</h1>
             {users.map((user) => (
                 <div>
-                    <p>{user.name}</p>
+                    <Link href='/profile/[id]' as={`/profile/${user.id}`}>
+                        <p>{user.name}</p>
+                    </Link>
                 </div>
             ))}
         </div>
     )
 }
 
-export async function getServerSideProps(context){
+export async function getStaticProps(context){
     const response = await axios.get(
         'https://jsonplaceholder.typicode.com/users'
-    )
+    );
     const data = await response.data;
     return {
         props: {users:data}
