@@ -17,7 +17,7 @@ export default function Home() {
           <h1>Seja bem vindo ao nosso catálogo de produtos importados</h1>
           <span>fique a vontade para conhecer nossas mercadorias</span>
           <br/>
-          <a href='\users'>Abrir Usuários</a>
+          <a href='\products'>Abrir Usuários</a>
         </div>
       </div>
 

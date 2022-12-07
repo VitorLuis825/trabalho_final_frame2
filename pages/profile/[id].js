@@ -1,35 +1,34 @@
 import axios from "axios";
 
-function Profile({user={}}){
+function Profile({product={}}){
     return (
         <div>
-            <p>{user.id}</p>
-            <p>{user.name}</p>
-            <p>{user.username}</p>
+            <p>{product.id}</p>
+            <p>{product.title}</p>
         </div>
     )
 }
 
 export async function getStaticProps(context){
     const response = await axios.get(
-        'https://jsonplaceholder.typicode.com/users',
+        'https://fakestoreapi.com/products',
         {params: {id:context.params.id}}
     );
 
-    const user = await response.data[0];
+    const product = await response.data[0];
     return {
-        props: {user}
+        props: {product}
     }
 }
 
 export async function getStaticPaths(){
     const response = await axios.get(
-        'https://jsonplaceholder.typicode.com/users'
+        'https://fakestoreapi.com/products'
     );
 
-    const users = await response.data;
-    const paths = users.map((user) => {
-        return {params: {id: String(user.id)}};
+    const products = await response.data;
+    const paths = products.map((product) => {
+        return {params: {id: String(product.id)}};
     });
 
     return {

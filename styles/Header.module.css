@@ -16,7 +16,7 @@
     padding: 1rem;
 }
 
-.navbar span {
+.navbar a {
     color: white;
     font-size: 2rem;
     margin: 0;
@@ -25,6 +25,6 @@
     transition: .3s;
 }
 
-.navbar span:hover {
+.navbar a:hover {
     color: blueviolet;
 }
