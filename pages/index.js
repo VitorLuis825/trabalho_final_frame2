@@ -1,15 +1,23 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import axios from 'axios';
+import Topo from '../components/Topo'
+import Base from '../components/Base'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Projeto SSG</title>
+        <title>Prova de Frameworks 2 - Nícolas Kurz Chimenes Silva</title>
       </Head>
-      <h1>Projeto SSG</h1>
-      <a href='\users'>Abrir Usuários</a>
-    </div>
+
+      <Topo/>
+      
+      <div className={styles.container_content}>
+        <h1>Projeto SSG</h1>
+        <a href='\users'>Abrir Usuários</a>
+      </div>
+
+      <Base/>
+    </>
   )
 }

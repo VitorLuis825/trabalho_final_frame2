@@ -1,0 +1,30 @@
+.header {
+    height: 10vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.navbar {
+    height: 100%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.navbar span {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.navbar span:hover {
+    color: blueviolet;
+}

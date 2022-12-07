@@ -2,28 +2,38 @@ import React from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 
-function Users({users}){
+import Topo from '../components/Topo'
+import Base from '../components/Base'
+
+function Produtos({produtos}){
     return (
         <div>
-            {users.map((user) => (
-                <div>
-                    <Link href='/profile/[id]' as={`/profile/${user.id}`}>
-                        <p>{user.name}</p>
-                    </Link>
-                </div>
-            ))}
+            <Topo/>
+            <div class={container_content}>
+                <h1>Catálogo de Produtos</h1>
+                {produtos.map((produto) => (
+                <>
+                    <div>
+                        <Link href='/profile/[id]' as={`/profile/${produto.id}`}>
+                            <p>{produto.name}</p>
+                        </Link>
+                    </div>
+                </>
+                ))}
+            </div>
+            <Base/>
         </div>
     )
 }
 
 export async function getStaticProps(context){
     const response = await axios.get(
-        'https://jsonplaceholder.typicode.com/users'
+        'https://fakestoreapi.com/products'
     );
     const data = await response.data;
     return {
-        props: {users:data}
+        props: {produtos:data}
     }
 }
 
-export default Users;
+export default Produtos;
