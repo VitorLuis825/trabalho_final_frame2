@@ -13,8 +13,12 @@ export default function Home() {
       <Topo/>
       
       <div className={styles.container_content}>
-        <h1>Projeto SSG</h1>
-        <a href='\users'>Abrir Usuários</a>
+        <div class={styles.container_root}>
+          <h1>Seja bem vindo ao nosso catálogo de produtos importados</h1>
+          <span>fique a vontade para conhecer nossas mercadorias</span>
+          <br/>
+          <a href='\users'>Abrir Usuários</a>
+        </div>
       </div>
 
       <Base/>
