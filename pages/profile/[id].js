@@ -3,7 +3,7 @@ import axios from "axios";
 
 // import Link from 'next/link';
 
-// import styles from "../styles/Produtos.module.css"
+import styles from "../../styles/Produto.module.css"
 
 import Head from 'next/head';
 import Topo from '../../components/Topo';
@@ -13,21 +13,40 @@ function Profile({product={}}){
     return (
         <>
 
-        <Head>
-            <title>Prova de Frameworks 2 - Nícolas Kurz Chimenes Silva</title>
-            <meta name="description" />
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
+            <Head>
+                <title>Prova de Frameworks 2 - Nícolas Kurz Chimenes Silva</title>
+                <meta name="description" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
-        <div>
-            <Topo/>
-            
-                <div>
-                    <p>{product.id}</p>
-                    <p>{product.title}</p>
-                </div>
-            <Base/>
-        </div>
+            <div>
+                <Topo/>            
+                    <div class={styles.container_produto}>
+                        <div class={styles.grid_cards}>
+                            <div class={styles.card_produto}>
+                                <h1>{product.title}</h1>
+
+                                <img src={product.image}></img>
+
+                                <div class={styles.info}>
+                                    <div class={styles.itens}>
+                                        <span><b>Descrição:</b><p>{product.description}</p></span>
+                                    </div>                                    
+                                    <div class={styles.itens}>
+                                        <span><b>Preço:</b><p>{product.price} $</p></span>
+                                    </div>
+                                    <div class={styles.itens}>
+                                        <span><b>Rating:</b><p>{product.rating.rate}</p></span>
+                                    </div>
+                                    <div class={styles.itens}>
+                                        <span><b>Nº de Produtos Vendidos:</b><p>{product.rating.count}</p></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <Base/>
+            </div>
         </>
     )
 }

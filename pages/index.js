@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Prova de Frameworks 2 - Nícolas Kurz Chimenes Silva</title>
+        <title>CDPI</title>
         <meta name="description" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import styles from "../styles/Produtos.module.css"
+
 import Link from 'next/link';
 import Head from 'next/head';
 
-import styles from "../styles/Produtos.module.css"
 
 import Topo from '../components/Topo'
 import Base from '../components/Base'
@@ -12,23 +13,26 @@ function Produtos({produtos}){
     return (
         <>
         <Head>
-            <title>Prova de Frameworks 2 - Nícolas Kurz Chimenes Silva</title>
+            <title>CDPI</title>
             <meta name="description" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        
+
             <div>
                 <Topo/>
-                <div class={styles.container_content}>
+                <div class={styles.container_produtos}>
                     <h1>Catálogo de Produtos</h1>
                     {produtos.map((produto) => (
-                    <>
-                        <div>
-                            <Link href='/profile/[id]' as={`/profile/${produto.id}`}>
-                                <p>{produto.title}</p>
-                            </Link>
-                        </div>
-                    </>
+                        <>
+                            <div class={styles.grid_cards}>
+                                <Link href='/profile/[id]' as={`/profile/${produto.id}`}>
+                                    <div class={styles.card_produtos}>
+                                        <p>{produto.title}</p>
+                                        <p>{produto.description}</p>
+                                    </div>
+                                </Link>
+                            </div>
+                        </>
                     ))}
                 </div>
                 <Base/>
