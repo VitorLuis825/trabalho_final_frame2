@@ -1,1 +1,1 @@
-# Trabalho Final de Frameworks 2
+# Trabalho Final de Frameworks 2 - Nícolas Kurz Chimenes Silva e Rômulo Romanholi Pereira
