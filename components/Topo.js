@@ -6,7 +6,7 @@ export default function Home() {
     <div className={styles.container}>
       <header className={styles.header}>
         <nav className={styles.navbar}>
-            <Link href='/'>Nícolas Kurz Chimenes Silva</Link>
+            <Link href='/'>CDPI - Catálogo Dinâmico de Produtos Importados</Link>
         </nav>
       </header>
     </div>

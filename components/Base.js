@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <footer className={styles.footer}>
         <div className={styles.div}>
-          <span>Developed by Nícolas Kurz</span>
+          <span>Developed by Nícolas Kurz and Rômulo Romanholi Pereira</span>
           </div>
       </footer>
     </div>

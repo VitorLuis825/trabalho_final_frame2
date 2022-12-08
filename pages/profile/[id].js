@@ -1,11 +1,34 @@
+import React from 'react';
 import axios from "axios";
+
+// import Link from 'next/link';
+
+// import styles from "../styles/Produtos.module.css"
+
+import Head from 'next/head';
+import Topo from '../../components/Topo';
+import Base from '../../components/Base';
 
 function Profile({product={}}){
     return (
+        <>
+
+        <Head>
+            <title>Prova de Frameworks 2 - Nícolas Kurz Chimenes Silva</title>
+            <meta name="description" />
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
+
         <div>
-            <p>{product.id}</p>
-            <p>{product.title}</p>
+            <Topo/>
+            
+                <div>
+                    <p>{product.id}</p>
+                    <p>{product.title}</p>
+                </div>
+            <Base/>
         </div>
+        </>
     )
 }
 
