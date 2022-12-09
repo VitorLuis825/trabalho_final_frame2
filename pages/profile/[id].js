@@ -57,7 +57,7 @@ export async function getStaticProps(context){
         {params: {id:context.params.id}}
     );
 
-    const product = await response.data[0];
+    const product = await response.data[context.params.id - 1];
     return {
         props: {product}
     }
